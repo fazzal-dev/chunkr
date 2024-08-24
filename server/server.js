@@ -9,18 +9,22 @@ const users = {};
 //socket Id's to RoomId's
 const socketToRoom = {};
 
+const allowedOrigins = ["https://chunkr.vercel.app", "http://localhost:3000"];
 app.use(
   cors({
-    origin: ["https://chunkr-server.vercel.app", "http://localhost:3000"],
+    origin: allowedOrigins,
     methods: ["GET", "POST"],
     allowedHeaders: ["Content-Type"],
+    credentials: true,
   })
 );
 
 const io = socket(server, {
   cors: {
-    origin: ["https://chunkr-server.vercel.app", "http://localhost:3000"],
+    origin: allowedOrigins,
+    methods: ["GET", "POST"],
     allowedHeaders: ["Content-Type"],
+    credentials: true,
   },
 });
 

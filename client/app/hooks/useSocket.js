@@ -6,7 +6,9 @@ const useSocket = (roomID) => {
   const socketRef = useRef();
 
   useEffect(() => {
-    socketRef.current = io.connect("https://chunkr-server.vercel.app/");
+    socketRef.current = io.connect("https://chunkr-server.vercel.app", {
+      withCredentials: true,
+    });
     socketRef.current.emit("join room", roomID);
 
     socketRef.current.on("room full", () => {
