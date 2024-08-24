@@ -1,0 +1,12 @@
+# Node modules
+node_modules/
+
+# Logs
+*.log
+
+# OS generated files
+.DS_Store
+
+# Build outputs
+.next/
+dist/
