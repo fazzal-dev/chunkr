@@ -74,6 +74,13 @@ io.on("connection", (socket) => {
   console.log(socketToRoom);
 });
 
+app.get("/api/test", (req, res) => {
+  res.json({
+    message: "Server is running correctly",
+    timestamp: new Date().toISOString(),
+  });
+});
+
 server.listen(process.env.PORT || 8000, () =>
   console.log("server is running on port 8000")
 );
