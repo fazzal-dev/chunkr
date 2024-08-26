@@ -1,12 +1,11 @@
 <div align="center">
   <p align="center">
-    <img src="./client/public/logo.png" width="80">
+    <img src="./client/public/logo.png" width="250">
   </p>
   <h3 align="center">Chunkr - P2P File Transfer ⚡</h3>
   <p align="center">
     <img src="https://img.shields.io/badge/status-active-brightgreen" height="22" />
     <img src="https://img.shields.io/badge/release-v1.0-blue" height="22" />
-    <img src="https://img.shields.io/badge/license-MIT-green" height="22" />
   </p>
 </div>
 
