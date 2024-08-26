@@ -2,7 +2,7 @@
   <p align="center">
     <img src="./client/public/logo.png" width="250">
   </p>
-  <h3 align="center">Chunkr - P2P File Transfer ⚡</h3>
+  <h3 align="center">chunkr - P2P File Transfer ⚡</h3>
   <p align="center">
     <img src="https://img.shields.io/badge/status-active-brightgreen" height="22" />
     <img src="https://img.shields.io/badge/release-v1.0-blue" height="22" />
