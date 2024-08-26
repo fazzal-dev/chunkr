@@ -1,6 +1,6 @@
 <div align="center">
   <p align="center">
-    <img src="./public/logo.png" width="80">
+    <img src="./client/public/logo.png" width="80">
   </p>
   <h3 align="center">Chunkr - P2P File Transfer ⚡</h3>
   <p align="center">
