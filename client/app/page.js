@@ -14,6 +14,10 @@ export default function Home() {
     router.push(`/room/${id}`);
   };
 
+  const onRoomID = (e) => {
+    setJoinRoomId(e.target.value);
+  };
+
   const joinRoom = () => {
     if (joinRoomId.trim()) {
       router.push(`/room/${joinRoomId}`);
@@ -61,7 +65,7 @@ export default function Home() {
                 placeholder="Enter 6-digit Room ID"
                 className="w-full bg-gray-700 border-2 border-gray-600 rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 transition-colors uppercase"
                 value={joinRoomId}
-                onChange={(e) => setJoinRoomId(e.target.value.toUpperCase())}
+                onChange={onRoomID}
                 maxLength={6}
               />
             </div>
