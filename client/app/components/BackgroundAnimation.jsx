@@ -5,21 +5,22 @@ const BackgroundAnimation = () => {
     return [...Array(20)].map((_, i) => (
       <div
         key={i}
-        className="absolute bg-blue-500 opacity-10 rounded-full"
+        className="data-chunk"
         style={{
-          width: `${Math.random() * 300 + 50}px`,
-          height: `${Math.random() * 300 + 50}px`,
-          left: `${Math.random() * 100}%`,
-          top: `${Math.random() * 100}%`,
-          animation: `float ${Math.random() * 10 + 5}s infinite ease-in-out`,
+          "--size": `${Math.random() * 100 + 50}`,
+          "--x": `${Math.random() * 100}`,
+          "--y": `${Math.random() * 100}`,
+          "--delay": `${Math.random() * -15}s`,
         }}
-      ></div>
+      >
+        {[...Array(4)].map((_, j) => (
+          <div key={j} className="data-fragment" />
+        ))}
+      </div>
     ));
   }, []);
 
-  return (
-    <div className="absolute inset-0 overflow-hidden">{backgroundElements}</div>
-  );
+  return <div className="background-animation">{backgroundElements}</div>;
 };
 
 export default BackgroundAnimation;

@@ -6,7 +6,11 @@ const useSocket = (roomID) => {
   const socketRef = useRef();
 
   useEffect(() => {
-    socketRef.current = io.connect("wss://chunkr.up.railway.app", {
+    const socketURL =
+      process.env.NODE_ENV === "development"
+        ? "http://localhost:8000"
+        : "wss://chunkr.up.railway.app";
+    socketRef.current = io.connect(socketURL, {
       withCredentials: true,
     });
     socketRef.current.emit("join room", roomID);
