@@ -9,6 +9,7 @@ import UserInfo from "@/app/components/UserInfo";
 import BackgroundAnimation from "@/app/components/BackgroundAnimation";
 import { generateUserName } from "@/app/utils/nameGenerator";
 import { AiOutlineLoading3Quarters, AiOutlineCopy } from "react-icons/ai";
+import { RiSignalTowerLine } from "react-icons/ri";
 
 const Room = () => {
   const { id: roomID } = useParams();
@@ -48,6 +49,34 @@ const Room = () => {
   };
   console.log("connection", connection);
 
+  const getConnectionIcon = () => {
+    if (loading) {
+      return (
+        <RiSignalTowerLine
+          size={24}
+          className="text-gray-500 animate-pulse"
+          title="Establishing connection"
+        />
+      );
+    } else if (connection) {
+      return (
+        <RiSignalTowerLine
+          size={24}
+          className="text-green-600"
+          title="Connection established"
+        />
+      );
+    } else {
+      return (
+        <RiSignalTowerLine
+          size={24}
+          className="text-gray-500"
+          title="Waiting for connection"
+        />
+      );
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gray-900 text-white p-4 relative overflow-hidden">
       <BackgroundAnimation />
@@ -64,9 +93,12 @@ const Room = () => {
           <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-blue-500 to-purple-500"></div>
 
           <div className="flex justify-between items-center mb-8">
-            <h2 className="text-2xl font-bold">
-              Room: <span className="text-blue-400">{roomID}</span>
-            </h2>
+            <div className="flex items-center space-x-2">
+              <h2 className="text-2xl font-bold">
+                Room: <span className="text-blue-400">{roomID}</span>
+              </h2>
+              {getConnectionIcon()}
+            </div>
             <button
               onClick={copyRoomID}
               className="bg-gray-700 hover:bg-gray-600 rounded-full p-3 transition-all duration-300 ease-in-out transform hover:scale-110"
