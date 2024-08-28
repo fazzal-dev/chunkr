@@ -15,7 +15,8 @@ export default function Home() {
   };
 
   const onRoomID = (e) => {
-    setJoinRoomId(e.target.value);
+    const id = e.target.value;
+    setJoinRoomId(id.toUpperCase());
   };
 
   const joinRoom = () => {
